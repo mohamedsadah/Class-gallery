@@ -1,16 +1,18 @@
+import { Route, Routes } from "react-router-dom"
+import Home from "./pages/Home";
+import Login from "./pages/Login";
 
 
 function App() {
 
 
   return (
-    <>
-      <div data-theme="dark">
-        <h1>University App</h1>
-        <button class="btn btn-primary">Button</button>
-      </div>
-    </>
-  )
+   <Routes>
+      <Route path="/" element={<Home />} />
+      <Route path="/Login" element={<Login/> } />
+
+   </Routes>
+  );
 }
 
 export default App
