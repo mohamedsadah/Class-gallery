@@ -33,7 +33,7 @@ const Login = () => {
     }
 
   return (
-    <div className="hero min-h-screen h-14 bg-gradient-to-r from-purple-500 to-pink-500">
+    <div className="background hero min-h-screen h-14 bg-gradient-to-r from-purple-500 to-pink-500">
   <div className="hero-content flex-col ">
     <div className="text-center">
       <h1 className="text-5xl font-bold text-slate-50">UniGallery</h1>
