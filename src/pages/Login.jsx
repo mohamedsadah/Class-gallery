@@ -2,9 +2,6 @@ import React, {useState} from 'react';
 import {  signInWithEmailAndPassword   } from 'firebase/auth';
 import { auth } from '../firebase/config';
 import { NavLink, useNavigate } from 'react-router-dom'
-import { useRef } from 'react';
-
-const inputRef = useRef;
 
  
 const Login = () => {
@@ -15,12 +12,13 @@ const Login = () => {
     const [password, setPassword] = useState('');
        
     const onLogin = (e) => {
+      
         e.preventDefault();
         signInWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in
             const user = userCredential.user;
-            navigate("/Home")
+            navigate("/InPage")
             console.log(user);
         })
         .catch((error) => {
@@ -52,7 +50,8 @@ const Login = () => {
           <label className="label">
             <span className="label-text mt-4 font-bold text-secondary text-2xl mb-5">University-ID</span>
           </label>
-          <input type="text" placeholder="password" className="input input-bordered border-solid"  onChange={(e)=>setPassword(e.target.value)}/>
+          <input type="text" placeholder="password" className="input input-bordered border-solid"  
+          onChange={(e)=>setPassword(e.target.value)}/>
           <label className="label">
           </label>
         </div>
