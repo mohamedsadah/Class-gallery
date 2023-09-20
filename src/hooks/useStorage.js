@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { storage } from '../firebase/config';
+import { database, storage } from '../firebase/config';
 import {v4 as uuidv4} from 'uuid'
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
-import { Navigate, Route } from 'react-router-dom';
-import Inpage from '../pages/Inpage';
+import { collection } from 'firebase/firestore';
+import { addDoc } from 'firebase/firestore';
 
 const useStorage = () => {
 
@@ -11,6 +11,8 @@ const useStorage = () => {
     const [error, setError] = useState(null);
     const [url, setUrl] = useState(null);
 
+
+       
     const startUpload = (file = File) =>{
         if (!file){
             return;
@@ -36,14 +38,33 @@ const useStorage = () => {
     }
     else if(progress==100){
     alert("File Uploaded");
+    //window.location.replace('/Inpage');
+    
+ 
+    
    }
   }, 
   (error) => {
 
     setError(error);
-  }, () => { getDownloadURL(uploadTask.snapshot.ref).then((downloadURL) => {
+   
+  }, async () => { 
+    const downloadURL = await getDownloadURL(uploadTask.snapshot.ref);
+
     setUrl(downloadURL);
-      console.log('File available at', downloadURL);
+    console.log('File available at', downloadURL);
+
+  
+
+    const level = Math.round(Math.random() * 4);
+   
+
+
+     //store data
+     await addDoc(collection(database, "images"), {
+      first: downloadURL,
+      CreatedAt: new Date(),
+      Cyear: level
     });
   }
 );

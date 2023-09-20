@@ -7,11 +7,22 @@ const ImageGallery = () => {
       <div>
       <div className="hero  text-center">
 
-  <div className=" w-full bg-cover 
-     bg-[url('/images/IMG-20230916-WA0045.jpg')] mt-5  mx-3.5 p-0 rounded-3xl shadow-md">
+  <div className=" w-full bg-cover
+     bg-[url('/images/616949393cf90643c1403605_6423.png')] h-fit py-3 ">
+
+
+<div className="navbar h-14 justify-between">
+  <a className=" font-extrabold text-white normal-case text-3xl ml-32 mr-96 ">CHRISTEX UNIVERSITY GALLERY</a>
+  <button className="btn btn-secondary font-bold "><a href="/Uploadform">Upload</a></button>
+  <button className="btn btn-secondary font-bold  ">Logout</button>
+</div>
+
+
+
+
     <div className=" p-10">
-      <h1 className="text-5xl font-bold p-6">WELCOME DEAR STUDENT</h1>
-      <p className="">Enjoy exploring fun moments from students across the University</p>
+      <h1 className="text-5xl font-bold p-6 text-white">WELCOME DEAR STUDENT</h1>
+      <h2 className=" text-white shadow-lg">Enjoy exploring fun moments from students across the University</h2>
     </div>
     
   </div>

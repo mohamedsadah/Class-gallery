@@ -3,8 +3,7 @@ import Uploadform from '../Components/UploadForm'
 
 const Upload = () => {
   return (
-    <div>
-      <Uploadform />
+    <div className="bg-slate-950">
     </div>
   )
 }
