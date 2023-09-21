@@ -1,7 +1,10 @@
 import { useState } from "react"
 import useStorage from "../hooks/useStorage";
+import useFirestore from '../hooks/useFirestore'
+import { Link } from "react-router-dom";
 
 const Uploadform = () => {
+
   const [selectedFile , setSelectedFile] = useState(null);
 
   const {startUpload, progress} = useStorage();
@@ -17,13 +20,17 @@ const Uploadform = () => {
     if(selectedFile){
       startUpload(selectedFile);
       console.log(selectedFile);
+      
 
     }
     setSelectedFile("");
+
+
+
   }
 
   return (
-    <div className="text-center absoute inset-0">
+    <div className="text-center bg-cover bg-zinc-950 mt-96">
       <form onSubmit={handleSubmit}
       className="flex items-center flex-col gap-8 w-full">
         <input type="file" 
@@ -33,9 +40,15 @@ const Uploadform = () => {
         <button type="submit" 
         
         className={`btn btn-secondary btn-wide gap-5 ${Boolean(progress) && 'loading'}`} >Upload</button>
+
+        <Link to = "/InPage"><button type="submit" className="btn btn-primary"  >Main Page</button></Link>
+
       </form>
+
+    
     </div>
   )
+
 }
 
 export default Uploadform

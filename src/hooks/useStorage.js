@@ -40,6 +40,7 @@ const useStorage = () => {
     alert("File Uploaded");
     //window.location.replace('/Inpage');
     
+    
  
     
    }
@@ -62,7 +63,7 @@ const useStorage = () => {
 
      //store data
      await addDoc(collection(database, "images"), {
-      first: downloadURL,
+      imageUrl: downloadURL,
       CreatedAt: new Date(),
       Cyear: level
     });
