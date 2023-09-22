@@ -4,7 +4,7 @@ import Login from "./pages/Login";
 import Inpage from "./pages/Inpage";
 import { Navbar } from "flowbite-react";
 import ImageGallery from "./Components/ImageGallery";
-import Uploadform from "./Components/UploadForm";
+import Uploadform from "./pages/UploadForm";
 
 
 function App() {

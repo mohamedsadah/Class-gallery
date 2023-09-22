@@ -1,5 +1,5 @@
 import React from 'react'
-import Uploadform from '../Components/UploadForm'
+import Uploadform from './UploadForm'
 
 const Upload = () => {
   return (

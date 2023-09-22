@@ -1,13 +1,12 @@
 import React from 'react'
 import Navbar from '../Components/Navbar'
 import ImageGallery from '../Components/ImageGallery'
-import Uploadform from '../Components/UploadForm'
 
 const Inpage = () => {
-  return <div data-theme = 'dark' className="mx-10 rounded-3xl rounded-t-3xl rounded-tr-3xl">
+  return (<div data-theme = '' className=" pr-0 mr-0 w-full">
 
     <ImageGallery />
-    </div>
+    </div>)
   
 }
 

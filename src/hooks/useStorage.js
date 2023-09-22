@@ -57,7 +57,7 @@ const useStorage = () => {
 
   
 
-    const level = Math.round(Math.random() * 4);
+    const level = Math.round(Math.random() * 4)+ 1;
    
 
 
